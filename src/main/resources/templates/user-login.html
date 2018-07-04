@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user-login</title>
+</head>
+<body>
+<form class="form1" action="/user/add" method="get">
+    <table>
+        <tr>
+            用户注册页面
+        </tr>
+       <tr>
+           <td>名称：</td>
+           <td><input type="text" name="name" value="" placeholder="请输入用户名" /></td>
+       </tr>
+        <tr>
+            <td>年龄：</td>
+            <td><input type="text" name="age" value="" placeholder="请输入密码" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="提交注册" />
+            </td>
+        </tr>
+    </table>
+</form>
+<form class="form2" action="/user/find_all" method="post">
+    &nbsp;&nbsp;&nbsp;<input type="submit" value="点击查询" />
+</form>
+</body>
+</html>
