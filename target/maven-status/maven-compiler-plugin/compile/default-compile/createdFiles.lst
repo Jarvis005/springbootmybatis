@@ -1,0 +1,6 @@
+com\example\demo\service\UserService.class
+com\example\demo\model\User.class
+com\example\demo\SpringbootmybatisApplication.class
+com\example\demo\dao\UserDao.class
+com\example\demo\controller\UserController.class
+com\example\demo\service\impl\UserServiceImpl.class
