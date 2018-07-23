@@ -13,20 +13,18 @@ import javax.validation.constraints.NotNull;
 @ApiModel(value = "用户注册入参")
 public class User {
     @ApiModelProperty(value = "用户Id")
-    private Integer id;
+    private Integer sid;
     @ApiModelProperty(value = "用户名")
-    @NotBlank
     private String name;
     @ApiModelProperty(value = "年龄")
-    @NotNull
     private Integer age;
 
-    public Integer getId() {
-        return id;
+    public Integer getSid() {
+        return sid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 
     public String getName() {

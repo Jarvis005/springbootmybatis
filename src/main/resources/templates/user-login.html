@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>user-login</title>
 </head>
 <body>
-<form class="form1" action="/user/add" method="get">
+<form id="form1">
     <table>
         <tr>
             用户注册页面
         </tr>
        <tr>
            <td>名称：</td>
-           <td><input type="text" name="name" value="" placeholder="请输入用户名" /></td>
+           <td><input class="name" id="name" type="text" name="name" placeholder="请输入用户名" /></td>
        </tr>
         <tr>
             <td>年龄：</td>
-            <td><input type="text" name="age" value="" placeholder="请输入密码" /></td>
+            <td><input class="age" type="number" name="age" placeholder="请输入年龄" /></td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="提交注册" />
+                <input class="button" type="button" onclick="sub()" value="提交注册" />
             </td>
         </tr>
     </table>
@@ -29,5 +29,24 @@
 <form class="form2" action="/user/find_all" method="post">
     &nbsp;&nbsp;&nbsp;<input type="submit" value="点击查询" />
 </form>
+<div class="modal fade" id="editDialog"></div>
+<script type="application/javascript"  src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.7.min.js";;;></script>
+<script>
+    function sub() {
+        $.ajax({
+            "url" : "http://localhost:8089/user/add",
+            "type" : "POST",
+            "data" : $('#form1').serialize(),
+            "dataType" : "json",
+            success : function (res) {
+                $('#editDialog').text(JSON.stringify(res));
+            },
+            error : function (res) {
+                console.log(res)
+            }
+        });
+    }
+</script>
 </body>
 </html>

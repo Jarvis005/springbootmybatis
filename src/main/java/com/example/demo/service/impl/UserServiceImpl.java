@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         List<User> users = userDao.findAll();
-        if(users.size() <= 0 || users == null){
+        if(users.size() <= 0){
             return new ArrayList<>();
         }
         try {
